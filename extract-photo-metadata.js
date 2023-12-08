@@ -18,25 +18,32 @@ const db = await mysql.createConnection({
     database: 'grupp-db'
   });
 
-  // Function to be able to run querys in MySQL
-  async function query(sql, listOfValues) {
-    let result = await db.execute(sql, listOfValues);
-    return result[0];
-  }
+// A small function for a query
+async function query(sql, listOfValues) {
+  let result = await db.execute(sql, listOfValues);
+  return result[0];
+}
 
-//Loop through the images and extract the metadata
+// read all file names from the Music fodler
+const files = await fs.readdirSync('images');
+
+// loop through all music files and read metadata
 for (let image of images) {
-    //Only for files ending with .jpg
-    //slice(-4) get the last 4 letters from the image name
-    if(image.slice(-4) == '.jpg') {
 
-    console.log('IMAGE: ' + image);
-    let metadata = await exifr.parse('images/' + image);
-    console.log(metadata);
-    let result = await query(`
+  // Get the metadata for the file
+  let metadata = await exifr.parse('images/' + image);
+
+  // INSERT TO DATABASE
+  let result = await query(`
     INSERT INTO images (fileName, metadata)
     VALUES(?, ?)
   `, [image, metadata]);
-  console.log(result);
-    }
+
+  // Log the result of inserting in the database
+  console.log(image, result);
+
 }
+
+// exit/stop the script when everything is imported
+// so you don't have to press Ctrl+C
+process.exit();
