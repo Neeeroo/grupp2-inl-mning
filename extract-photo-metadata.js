@@ -1,14 +1,13 @@
-//import the exifr package/module
-//(that we have installed using npm istall exifr)
+// importera exifr för att ta metadata från bilderna
 import exifr from 'exifr';
 import mysql from 'mysql2/promise';
-//Import fs (file system) - a built in module in Node.js
+//Importera file system (fs) - inbyggt i node.js
 import fs from 'fs';
 
-// Give me a list of all files in a folder
+// Ger oss en lista på alla filerna i mappen
 let images = fs.readdirSync('images');
 
-//Connectar till databasen
+// Kopplar oss till databasen
 const db = await mysql.createConnection({
     // CHANGE TO 127.0.0.1 IF YOU WANT TO RUN LOCAL DB
     host: '161.97.144.27',
@@ -18,32 +17,32 @@ const db = await mysql.createConnection({
     database: 'grupp-db'
   });
 
-// A small function for a query
+// Funktion för att skapa querys 
 async function query(sql, listOfValues) {
   let result = await db.execute(sql, listOfValues);
   return result[0];
 }
 
-// read all file names from the Music fodler
+// Läs alla filers namn från images mappen
 const files = await fs.readdirSync('images');
 
-// loop through all music files and read metadata
+// Loopa genom alla bilder och läs metadata
 for (let image of images) {
 
-  // Get the metadata for the file
+  // Ta metadatan från filen
   let metadata = await exifr.parse('images/' + image);
 
-  // INSERT TO DATABASE
+  // Sätt in i databasen med hjälp av query funktionen
   let result = await query(`
     INSERT INTO images (fileName, metadata)
     VALUES(?, ?)
   `, [image, metadata]);
 
-  // Log the result of inserting in the database
+  // Logga resultatet för att se att något händer.
   console.log(image, result);
 
 }
 
-// exit/stop the script when everything is imported
-// so you don't have to press Ctrl+C
+// Automatisk stop när det är klart, annars tror VSC
+// att något mer ska skickas in då vi är kopplade till databasen.
 process.exit();
