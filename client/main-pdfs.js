@@ -12,8 +12,8 @@ async function search() {
   let pdfs = await rawData.json();
   // create an variable name that initially is an empty string
   let html = `
-    <p>Du sökte efter "${searchTerm}"...</p>
-    <p>Hittade ${pdfs.length} låtar.</p>
+    <p>You searched for "${searchTerm}"...</p>
+    <p>Found ${pdfs.length} PDFs.</p>
   `;
   // loop through the found songs
   for (let pdf of pdfs) {
