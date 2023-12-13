@@ -12,3 +12,5 @@ https://dm23-tuc.lms.nodehill.se/article/ett-urval-av-pdf-er-powerpoints-och-jpg
 
 För Musik
 https://dm23-tuc.lms.nodehill.se/article/ca-500-musikfiler-med-metadata
+
+Server.js måste ändras i framtiden, just nu kan man endast söka på musik.
