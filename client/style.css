@@ -25,6 +25,7 @@ h2 {
 input {
     width: 20%;
     padding: 5px;
+    border-color: rgb(169, 160, 160);
 }
 
 button {
@@ -37,11 +38,12 @@ button {
 
 nav a {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     text-decoration: none;
     color: white;
     background-color: rgb(63, 63, 196);
+    text-size-adjust: 10px;
 }
 
 nav a:hover {
@@ -51,4 +53,10 @@ nav a:hover {
 nav {
    text-align: center;
    padding-top: 45vh;
+}
+
+#searchType {
+    width: 130px;
+    height: 30px;
+    text-align: center;
 }

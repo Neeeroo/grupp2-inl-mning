@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body <div style="background-color: lightgray;"></div>
+<body div style="background-color: lightgray;"></div>
   <div style="background-color: #D3D3D3;"></div>
   
   <a href="index.html">Back to mainpage</a>
@@ -18,11 +18,11 @@
   <!-- return false is needed fro the web page NOT to reload -->
   <form name="searchForm" onsubmit="search(); return false">
     <input name="term" placeholder="Search term">
-    <button type="submit">Sök</button>
+    <button type="submit">Search</button>
     <p>
-      Sök i:
-      <select name="searchType">
-        <option value="all">All information about searchResults</option>
+      Search in:
+      <select name="searchType" id="searchType">
+        <option value="all">All information</option>
         <option value="origional">Origional reference</option>
         <option value="company">Company Name</option>
         <option value="title">Title</option>
