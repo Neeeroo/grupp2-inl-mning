@@ -132,3 +132,36 @@ app.get('/api/pdfs/:searchTerm/:searchType', async (request, response) => {
   // Send a response to the client
   response.json(result);
 });
+
+
+
+// A search route to find powerpoint
+app.get('/api/powerpoints/:searchTerm/:searchType', async (request, response) => {
+  // Get the search term from as a parameter from the route/url
+  let searchTerm = request.params.searchTerm;
+  // Get teh search type a sa parameter from the route/url
+  let searchType = request.params.searchType;
+  // Make a database query and remember the result
+  // using the search term
+
+  let sql = `
+   SELECT * 
+   FROM powerpoints
+   WHERE LOWER(metadata -> '$.title.${searchType}') LIKE LOWER (?)
+  `;
+
+  // since the sql gets a bit different if you want to search all
+  // fix this with a if-clause replacing the sql
+  if (searchType == 'all') {
+    sql = `
+      SELECT *
+      FROM powerpoints
+      WHERE LOWER(metadata) LIKE LOWER (?)
+    `;
+  }
+
+  let result = await query(sql, ['%' + searchTerm + '%']);
+
+  // Send a response to the client
+  response.json(result);
+});
