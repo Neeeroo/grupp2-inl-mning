@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+    <title>Images</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html">Back to mainpage</a>
-    <h1>Music</h1>
+  
+    <a href="index.html">Back to mainpage</a>
+  
+    <h1>Images</h1>
 
 <!-- SKAPAR ETT SÖK FÄLT!!! -->
 <!-- Call the search function when the form is sent/submitted-->
@@ -19,18 +21,17 @@
     <p>
       Search in:
       <select name="searchType">
-        <option value="all">All information about songs</option>
-        <option value="artist">Artist name</option>
-        <option value="album">Album name</option>
-        <option value="title">Track name</option>
+        <option value="all">All information about images</option>
+        <option value="FileSource">Picture taken source</option>
+        <option value="CreateDate">Picture taken date</option>
       </select>
     </p>
   </form>
 <!-- An article of the page with search results -->
 <article class="searchResults">
-    Search for a track by title, album, artist.
+    Search for when or by what a picture was taken from
 </article>
 <!-- Load and run the main.js javascript -->
-    <script src="main-music.js"></script>
+    <script src="main-images.js"></script>
 </body>
 </html>

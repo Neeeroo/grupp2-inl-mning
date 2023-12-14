@@ -4,11 +4,10 @@ async function search() {
     let searchTerm = document.forms.searchForm.term.value;
     // read the searchType
     let searchType = document.forms.searchForm.searchType.value;
-    console.log(searchType);
     // empty the input field
     document.forms.searchForm.term.value = '';
     // read the json
-    let rawData = await fetch('/api/image/' + searchTerm + '/' + searchType);
+    let rawData = await fetch('/api/images/' + searchTerm + '/' + searchType);
     // convert json to a javascript data structure
     let images = await rawData.json();
     // create an variable name that initially is an empty string
@@ -21,8 +20,8 @@ async function search() {
       let meta = image.metadata;
       html += `
         <section>
-          <h2>${meta.title}</h2>
-          <img src="images/${image.fileName}"></img>
+          <h2>${image.fileName}</h2>
+          <img src="images/${image.fileName}">
           <p><b>Source:</b> ${meta.FileSource}</p>
           <p><b>Picture Taken:</b> ${meta.CreateDate}</p>  
           <p><b>Longitude:</b> ${meta.longitude}</p>
