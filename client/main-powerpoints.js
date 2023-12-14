@@ -13,19 +13,22 @@ async function search() {
   let powerpoints = await rawData.json();
   // create an variable name that initially is an empty string
   let html = `
-    <p>Du sökte efter "${searchTerm}"...</p>
-    <p>Hittade ${powerpoints.length} låtar.</p>
+    <p>You searched for "${searchTerm}"...</p>
+    <p>Found ${powerpoints.length} PowerPoints.</p>
   `;
   // loop through the found information
   for (let powerpoint of powerpoints) {
     let meta = powerpoint.metadata;
-    console.log(powerpoint.metadata);
+    //console.log(powerpoint.metadata);
+    console.log(meta.original)
+    let site = meta.original.includes('http') ? meta.original.split('//')[1].split('/')[0]:meta.original;
+    let link = 'https://' + site;
     html += `
       <section>
-        <h2>${meta.title}</h2>
+        <h2>${(meta.title + '').slice(0,50)}</h2>
         <p><b>Company:</b> ${meta.company}</p>
-        <p><b>Date Created:</b> ${meta.creation_date}</p>  
-        <p><b>Original Reference:</b> ${meta.original}</p>  
+        <p><b>Date Created:</b> ${meta.creation_date.split('T')[0]}</p>  
+        <p><b>Original published on the web site: </b><a target="_blank" href="${link}">${site}</a></p>  
         <p>
         <a href="powerpoints/${powerpoint.fileName}">Download PowerPoint</a>
         </p>

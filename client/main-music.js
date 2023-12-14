@@ -14,7 +14,7 @@ async function search() {
   // create an variable name that initially is an empty string
   let html = `
     <p>You searched for "${searchTerm}"...</p>
-    <p>Found ${songs.length} låtar.</p>
+    <p>Found ${songs.length} results.</p>
   `;
   // loop through the found songs
   for (let song of songs) {
