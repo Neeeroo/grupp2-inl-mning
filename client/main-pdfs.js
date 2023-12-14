@@ -25,7 +25,7 @@ async function search() {
         <p><b>Author:</b> ${meta.Author}</p>
         <p><b>Creator:</b> ${meta.Creator}</p>  
         <p>
-          <embed src="pdfs/${pdf.fileName}">
+          <embed src="pdfs/${pdf.fileName}" width='60%' height='200px' frameborder='0'>
         </p>
       </section>
     `;
