@@ -10,9 +10,15 @@ img {
 section {
     overflow: auto;
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
     padding-bottom: 20px;
 }
+
+h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+
 
 h2 {
     color: blue;
@@ -52,11 +58,94 @@ nav a:hover {
 
 nav {
    text-align: center;
-   padding-top: 45vh;
+   padding-top: 5vh;
 }
 
 #searchType {
-    width: 130px;
+    width: 150px;
     height: 30px;
+}
+
+
+.index-body {
+    background-image: url('bg-images/image1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-y: 30%;
+}
+
+.music-body {
+   background-image: url('bg-images/original-Musicimage.jpg');
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: top right;
+}
+
+.powerpoint-body {
+    background-image: url('bg-images/powerpointimage.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top right;
+}
+
+.images-body {
+    background-image: url('bg-images/image.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.images-body .searchResults {
+    display: inline-block;
+    width: 500px;
+    min-width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+optgroup {
+    font-size: 15px;
+    text-align: 15px;
+}
+
+.b2m {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.786);
+}
+
+.b2m-gray {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(160, 158, 158, 0.866);
+}
+
+.index-title {
     text-align: center;
+    font-size: 40px;
+    padding-top: 30vh;
+}
+
+.by {
+    padding-top: 23vh;
+    text-align: right;
+    color: white;
+    font-size: 25px;
+}
+.pdfs-body {
+    background-image: url('bg-images/pdfimage.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top right;
+}
+
+.pdf-title {
+    color: red;
 }

@@ -6,14 +6,10 @@
     <title>Images</title>
     <link rel="stylesheet" href="style.css">
 
-    <style>
-      optgroup { font-size:20px; }
-    </style>
-
 </head>
-<body style="background-image: url('bg-images/image.jpg'); opacity: 0.6;">
+<body class="images-body">
 
-    <a href="index.html">Back to mainpage</a>
+    <a class="b2m" href="index.html">Back to mainpage</a>
   
     <h1>Images</h1>
 
@@ -26,10 +22,12 @@
     <p>
       Search in:
       <select name="searchType" id="searchType">
-        <optgroup>
+        <optgroup class="optgroup">
         <option value="all">All information</option>
         <option value="FileSource">Picture taken source</option>
         <option value="CreateDate">Picture taken date</option>
+        <option value="ISO">ISO</option>
+        <option value="Make">Make</option>
         </optgroup>
       </select>
     </p>

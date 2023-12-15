@@ -21,11 +21,11 @@ async function search() {
     console.log(pdf.fileName);
     html += `
       <section>
-        <h2>${meta.Title}</h2>
+        <h2 class= "pdf-title">${meta.Title}</h2>
         <p><b>Author:</b> ${meta.Author}</p>
         <p><b>Creator:</b> ${meta.Creator}</p>  
-        <p>
-          <embed src="pdfs/${pdf.fileName}" width='60%' height='200px' frameborder='0'>
+        <p><b>Amount Pages:</b> ${pdf.metadata.numpages}</p>
+        <p><a target="_blank" href="pdfs/${pdf.fileName}">Open PDF</a>
         </p>
       </section>
     `;
