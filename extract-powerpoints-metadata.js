@@ -40,6 +40,7 @@ async function insertDataIntoDatabase(data) {
 let json = fs.readFileSync('./powerpoint.json', 'utf-8');
  
 // Convert from a string to a real data structure
+
 let data = JSON.parse(json);
 
 
