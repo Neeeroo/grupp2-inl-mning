@@ -149,3 +149,24 @@ optgroup {
 .pdf-title {
     color: red;
 }
+
+.b2m:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.b2m-gray:hover {
+    background-color:rgba(207, 206, 206, 0.866)
+}
+
+.b2m-pp {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(210, 70, 37, 0.866);
+}
+
+.b2m-pp:hover {
+    background-color: rgba(160, 158, 158, 0.866);
+}
