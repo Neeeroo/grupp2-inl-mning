@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Images</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      optgroup { font-size:20px; }
+    </style>
+
 </head>
-<body div style="background-color: lightgray;"></div>
-  <div style="background-color: #D3D3D3;"></div>
-  
+<body style="background-image: url('bg-images/image.jpg'); opacity: 0.6;">
+
     <a href="index.html">Back to mainpage</a>
   
     <h1>Images</h1>
@@ -22,9 +26,11 @@
     <p>
       Search in:
       <select name="searchType" id="searchType">
+        <optgroup>
         <option value="all">All information</option>
         <option value="FileSource">Picture taken source</option>
         <option value="CreateDate">Picture taken date</option>
+        </optgroup>
       </select>
     </p>
   </form>

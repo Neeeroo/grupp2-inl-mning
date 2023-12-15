@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      optgroup { font-size:20px; }  
+    </style>
+
 </head>
-<body div style="background-color: lightgray;"></div>
-  <div style="background-color: #D3D3D3;"></div>
+<body style="opacity: 20; background-image: url('bg-images/Musicimage.jpg');">
   
   <a href="index.html">Back to mainpage</a>
     <h1>Music</h1>
@@ -21,10 +25,12 @@
     <p>
       Search in:
       <select name="searchType" id="searchType">
+        <optgroup>
         <option value="all">All information</option>
         <option value="artist">Artist name</option>
         <option value="album">Album name</option>
         <option value="title">Track name</option>
+      </optgroup>
       </select>
     </p>
   </form>
