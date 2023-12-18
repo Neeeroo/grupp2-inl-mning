@@ -21,7 +21,7 @@ async function search() {
     console.log(pdf.fileName);
     html += `
       <section>
-        <h2 class= "pdf-title">${meta.Title}</h2>
+        <h2 class= "red-title">${meta.Title}</h2>
         <p><b>Author:</b> ${meta.Author}</p>
         <p><b>Creator:</b> ${meta.Creator}</p>  
         <p><b>Amount Pages:</b> ${pdf.metadata.numpages}</p>

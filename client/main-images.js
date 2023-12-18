@@ -22,11 +22,11 @@ async function search() {
         <section>
           <h2>${image.fileName}</h2>
           <a href="https://maps.google.com/?q=${image.metadata.latitude},${image.metadata.longitude}" target="_blank"><img src="/images/${image.fileName}"></a>
-          <p><b>Source:</b> ${meta.FileSource}</p>
-          <p><b>Picture Taken:</b> ${meta.CreateDate.split('T')[0]}</p>  
-          <p><b>ISO:</b> ${meta.ISO}</p>
-          <p><b>Make:</b> ${meta.Make}</p>
-          <p><b>Model:</b> ${meta.Model}</p>
+          <p><b>Source:</b><br>${meta.FileSource}</br></p>
+          <p><b>Picture Taken:</b><br>${meta.CreateDate.split('T')[0]}</br></p>  
+          <p><b>ISO:</b><br>${meta.ISO}</br></p>
+          <p><b>Make:</b><br>${meta.Make}</br></p>
+          <p><b>Model:</b><br>${meta.Model}</br></p>
           <p><i>Click the image for google maps coordinates</i></p>
         </section>
       `;

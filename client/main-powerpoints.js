@@ -25,7 +25,7 @@ async function search() {
     let link = 'https://' + site;
     html += `
       <section>
-        <h2>${(meta.title + '').slice(0,50)}</h2>
+        <h2 class="red-title">${(meta.title + '').slice(0,50)}</h2>
         <p><b>Company:</b> ${meta.company}</p>
         <p><b>Date Created:</b> ${meta.creation_date.split('T')[0]}</p>  
         <p><b>Original published on the web site: </b><a target="_blank" href="${link}">${site}</a></p>  
