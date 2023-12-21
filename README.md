@@ -1,5 +1,11 @@
 # grupp2-inl-mning
 
+# Contributers usernames:
+
+Amir: Neeeroo
+Indira : MalluIndira
+Danny: XxDanny91xX
+
 # To do!
 npm install
 för att ladda ner alla moduler som vi använder. VIKTIGT!
